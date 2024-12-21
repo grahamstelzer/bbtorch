@@ -15,10 +15,10 @@ run: tensortests
 	@echo "Running with Valgrind memory leak check..."
 	valgrind --leak-check=full ./tensortests
 	@echo "Running with Massif memory profiling..."
-	valgrind --tool=massif ./tensortests
-	@echo "Massif output saved to massif.out.*"
-	@ms_print massif.out.* > massif_output.txt
-	@echo "Massif readable output saved to massif_output.txt"
+	valgrind --tool=massif --massif-out-file=massif_outputs/massif.out.%p ./tensortests
+	@echo "Massif output saved to massif_outputs/massif.out.*"
+	@ms_print massif_outputs/massif.out.* > massif_outputs/massif_output.txt
+	@echo "Massif readable output saved to massif_outputs/massif_output.txt"
 
 clean:
-	rm -f *.o tensortests massif.out.* massif_output.txt
+	rm -f *.o tensortests massif_outputs/massif.out.* massif_outputs/massif_output.txt
