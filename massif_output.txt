@@ -1,0 +1,67 @@
+--------------------------------------------------------------------------------
+Command:            ./tensortests
+Massif arguments:   (none)
+ms_print arguments: massif.out.16608 massif.out.16732
+--------------------------------------------------------------------------------
+
+
+    KB
+72.49^                                                              :::::::::#
+     |                                                          :::::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+     |                                                          :  ::        #
+   0 +----------------------------------------------------------------------->Mi
+     0                                                                   2.684
+
+Number of snapshots: 8
+ Detailed snapshots: [4 (peak)]
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  0              0                0                0             0            0
+  1      2,299,983           72,712           72,704             8            0
+  2      2,415,788           73,744           73,728            16            0
+  3      2,424,575           74,232           74,208            24            0
+  4      2,804,845           74,232           74,208            24            0
+99.97% (74,208B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->97.94% (72,704B) 0x48FFA69: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+| ->97.94% (72,704B) 0x4011B99: call_init.part.0 (dl-init.c:72)
+|   ->97.94% (72,704B) 0x4011CA0: call_init (dl-init.c:30)
+|     ->97.94% (72,704B) 0x4011CA0: _dl_init (dl-init.c:119)
+|       ->97.94% (72,704B) 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+|         
+->01.38% (1,024B) 0x4AD7D03: _IO_file_doallocate (filedoalloc.c:101)
+| ->01.38% (1,024B) 0x4AE7ECF: _IO_doallocbuf (genops.c:347)
+|   ->01.38% (1,024B) 0x4AE6F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+|     ->01.38% (1,024B) 0x4AE56B4: _IO_new_file_xsputn (fileops.c:1244)
+|       ->01.38% (1,024B) 0x4AE56B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+|         ->01.38% (1,024B) 0x4AD93C0: fwrite (iofwrite.c:39)
+|           ->01.38% (1,024B) 0x498C853: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+|             ->01.38% (1,024B) 0x498CC0B: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+|               ->01.38% (1,024B) 0x1092F7: main (tensortests.cpp:28)
+|                 
+->00.65% (480B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  5      2,804,845           73,744           73,728            16            0
+  6      2,812,531            1,032            1,024             8            0
+  7      2,814,220                0                0             0            0
