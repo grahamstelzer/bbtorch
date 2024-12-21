@@ -1,4 +1,6 @@
 # bbtorch
-baby neural networks library in cpp
+baby neural networks library in cpp, going to try apply hyperfast optimization methods to pieces of a transformer
 
-mostly a proof of concept, and didnt want to go as low as C. will be applying hyper-optimization techniques
+## current opt list:
+- bfloat16
+- barrier synchronization methods
