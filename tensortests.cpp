@@ -31,6 +31,10 @@ int main() {
 
     int arr[] = {2, 3, 4, 512};
     Tensor t1(arr);
+
+    Tensor t2(arr);
+
+    Tensor t3 = t1 * t2;
     // std::cout << "\n" << t1.getDim() << "\n";
     // std::cout << t1.getDimSizes() << "\n";
     // std::cout << t1.getMemBlockSize() << "\n";
