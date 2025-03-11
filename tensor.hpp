@@ -36,7 +36,7 @@ class Tensor {
             }
 
             unsigned int seed = static_cast<unsigned int>(time(0));
-            
+
             // LCG ??
             unsigned long a = 1664525UL;  // multiplier
             unsigned long c = 1013904223UL;  // increment
@@ -49,8 +49,7 @@ class Tensor {
                 mem_block[i] = 2.0f * (static_cast<float>(seed) / static_cast<float>(m)) - 1.0f;
                 // std::cout << mem_block[i] << " ";
             }
-            
-            
+
             this->_dim = N;
             this->_dim_sizes = arr;
             this->_mem_block_size = mem_block_size;
@@ -66,7 +65,6 @@ class Tensor {
             delete[] this->_mem_block;
         }
 
-
         Tensor operator*(Tensor t2) {
             int t2_dim = t2.getDim();
             std::cout << t2_dim << std::endl;
@@ -78,7 +76,8 @@ class Tensor {
             // top tensor dimension should stay the same?
             // (2 groups of 3 groups of 4 by 512 matrices) * (2 groups of 3 groups of 4 by 512 matrices) = 
 
-            Tensor ret_tensor()
+            int arr[] = {2, 3, 4, 512};
+            Tensor ret_tensor(arr);
 
             return ret_tensor;
         }
