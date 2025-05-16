@@ -56,6 +56,12 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "typeinfo": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "bitset": "cpp",
+        "codecvt": "cpp",
+        "condition_variable": "cpp",
+        "iomanip": "cpp",
+        "mutex": "cpp",
+        "__nullptr": "cpp"
     }
 }

@@ -1,1 +1,4 @@
 massif_outputs/
+
+# cuda things:
+*.deb 
