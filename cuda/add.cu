@@ -17,7 +17,7 @@ void add(int n, float* x, float* y) {
 
 int main(int argc, char* argv[]) {
 
-    int N = 1<<20; // 1M elements (i think 1048576? 2^20)
+    int N = 100; // 1M elements (i think 1048576? 2^20)
     // std::cout << N << std::endl;
 
     float *x, *y;
@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
 
     // Run kernel on 1m elements on cpu
     // !!NOTE!!: syntax change here, global function call with <<>>
-    add<<<1, 1>>>(N, x, y);
+    add<<<1, N>>>(N, x, y);
     // first 1: number of blocks
     // second 1: number of threads per block
     // add: is the __global__ kernel function

@@ -2,3 +2,6 @@ massif_outputs/
 
 # cuda things:
 *.deb 
+
+comp1020_all/
+
